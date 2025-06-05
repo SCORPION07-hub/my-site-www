@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AtomTech - Criação de Sites & Automação IA</title>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #00ffea;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0d0d0d;
+      overflow-x: hidden;
+      display: flex;
+      justify-content: center; /* centraliza horizontal */
+      align-items: flex-start; /* começa do topo verticalmente */
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    main {
+      width: 100%;
+      max-width: 900px; /* limite maximo para ficar centralizado e responsivo */
+    }
+
+    /* Vidro neon container */
+    .glass {
+      background: rgba(0, 255, 234, 0.1);
+      border-radius: 15px;
+      border: 1px solid rgba(0, 255, 234, 0.3);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow:
+        0 0 10px #00ffe7,
+        0 0 20px #00ffe7,
+        0 0 40px #00ffe7;
+      padding: 2.5rem;
+      margin: 2rem auto;
+      transition: transform 0.3s ease;
+    }
+
+    .glass:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow:
+        0 0 15px #00ffea,
+        0 0 40px #00ffea,
+        0 0 70px #00ffea,
+        0 0 90px #00ffea;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      color: #00ffe7;
+      text-shadow:
+        0 0 10px #00ffe7,
+        0 0 20px #00ffe7,
+        0 0 30px #00ffe7;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      color: #a0f9f5;
+    }
+
+    /* Botão neon */
+    .btn {
+      display: inline-block;
+      padding: 12px 32px;
+      font-size: 1.1rem;
+      color: #00ffea;
+      border: 2px solid #00ffea;
+      border-radius: 30px;
+      background: transparent;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow:
+        0 0 5px #00ffe7,
+        0 0 15px #00ffe7,
+        0 0 20px #00ffe7;
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+
+    .btn:hover {
+      background: #00ffea;
+      color: #0d0d0d;
+      box-shadow:
+        0 0 20px #00ffea,
+        0 0 40px #00ffea,
+        0 0 60px #00ffea;
+      transform: scale(1.05);
+    }
+
+    section {
+      margin-top: 3rem;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      color: #00ffe7;
+      text-shadow:
+        0 0 5px #00ffe7,
+        0 0 10px #00ffe7;
+    }
+
+    .service,
+    .feature,
+    .faq-item {
+      background: rgba(0, 255, 234, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(0, 255, 234, 0.3);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow:
+        0 0 8px rgba(0, 255, 234, 0.15);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .service:hover,
+    .feature:hover,
+    .faq-item:hover {
+      box-shadow:
+        0 0 15px #00ffea,
+        0 0 40px #00ffea;
+      cursor: default;
+    }
+
+    .services-container,
+    .features-container,
+    .faq-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* Lista centralizada */
+    ul {
+      list-style: none;
+      color: #00ffea;
+      font-weight: 500;
+      text-align: left;
+      padding-left: 1.25rem;
+    }
+
+    ul li::before {
+      content: "➤ ";
+      color: #00ffea;
+    }
+
+    /* Contato */
+    #contato p,
+    #contato a {
+      text-align: center;
+      display: block;
+      font-size: 1.1rem;
+      margin: 0.3rem 0;
+      color: #00ffea;
+      text-decoration: none;
+      text-shadow: 0 0 5px #00ffea;
+    }
+
+    #contato a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #005050;
+      text-shadow:
+        0 0 3px #00ffe7;
+    }
+
+    /* Ícones neon */
+    .icon {
+      color: #00ffea;
+      margin-right: 10px;
+      filter: drop-shadow(0 0 4px #00ffea);
+    }
+
+    /* Media Queries para responsividade */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>AtomTech</h1>
+      <p>Criação de Sites & Automação Inteligente para sua Empresa</p>
+      <a href="https://wa.me/5568992493742" class="btn" target="_blank" rel="noopener">Converse pelo WhatsApp</a>
+    </header>
+
+    <section id="servicos">
+      <h2>Nossas Soluções</h2>
+      <div class="services-container">
+        <div class="service">
+          <i class="fa-solid fa-globe icon"></i><strong>Sites Empresariais</strong>
+          <p>Desenvolvemos sites responsivos, modernos e que valorizam sua marca para atrair clientes qualificados.</p>
+        </div>
+        <div class="service">
+          <i class="fa-solid fa-robot icon"></i><strong>Automação com Inteligência Artificial</strong>
+          <p>Chatbots inteligentes que atendem 24h, melhorando vendas e atendimento com experiência humanizada.</p>
+        </div>
+        <div class="service">
+          <i class="fa-solid fa-bullhorn icon"></i><strong>Páginas de Vendas Estratégicas</strong>
+          <p>Páginas otimizadas para conversão, ideais para lançamentos, promoções e campanhas impactantes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="por-que">
+      <h2>Por que escolher a AtomTech?</h2>
+      <ul>
+        <li>Atendimento humanizado: você nem percebe que está falando com uma IA.</li>
+        <li>Suporte técnico por 30 dias após a entrega.</li>
+        <li>Serviços personalizados: todas as alterações que desejar.</li>
+        <li>Sites que realmente convertem visitantes em clientes.</li>
+      </ul>
+    </section>
+
+    <section id="faq">
+      <h2>Dúvidas Frequentes</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <strong>Por que investir em automação para minha empresa?</strong>
+          <p>Automação gera economia de tempo, maior eficiência e permite atendimento 24/7, melhorando a experiência do cliente e aumentando suas vendas.</p>
+        </div>
+        <div class="faq-item">
+          <strong>Como um site pode aumentar minhas vendas?</strong>
+          <p>Um site bem projetado é seu cartão de visita digital, funcionando 24h por dia para atrair, engajar e converter visitantes em clientes reais.</p>
+        </div>
+        <div class="faq-item">
+          <strong>O site será adaptado para celulares?</strong>
+          <p>Sim! Todos os nossos sites são 100% responsivos, garantindo ótima experiência em qualquer dispositivo.</p>
+        </div>
+        <div class="faq-item">
+          <strong>Vocês cuidam da segurança?</strong>
+          <p>Sim! Implementamos protocolos de segurança para proteger seus dados e dos seus clientes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2>Diferenciais AtomTech</h2>
+      <div class="features-container">
+        <div class="feature">
+          <i class="fa-solid fa-palette icon"></i><strong>Design Futurista & Impactante</strong>
+          <p>Layouts únicos com efeitos neon e vidro que destacam sua marca e impressionam visitantes.</p>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-mobile-screen icon"></i><strong>Responsividade Completa</strong>
+          <p>Experiência perfeita em smartphones, tablets e desktops.</p>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-magnifying-glass-chart icon"></i><strong>SEO Avançado</strong>
+          <p>Seu site otimizado para ranquear melhor nos buscadores e atrair mais tráfego orgânico.</p>
+        </div>
+        <div class="feature">
+          <i class="fa-solid fa-brain icon"></i><strong>IA Integrada</strong>
+          <p>Chatbots inteligentes e automações que aumentam
