@@ -4,13 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Criação de Sites Profissionais | AtomTech Soluções Digitais</title>
+  <title>Criação de Sites Profissionais | AtomTech</title>
   <meta name="description" content="Sites personalizados, responsivos e modernos para valorizar sua marca e aumentar suas vendas. Atendimento via WhatsApp e Instagram." />
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/919/919847.png" type="image/png" />
-  <!-- Google Fonts: Montserrat -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/919/919847.png" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* Reset básico */
+    /* Reset e base */
     * {
       margin: 0;
       padding: 0;
@@ -18,15 +17,16 @@
     }
 
     body {
+      font-family: 'Montserrat', sans-serif;
       background-color: #0d0d0d;
       color: #e0e0e0;
-      font-family: 'Montserrat', sans-serif;
       line-height: 1.6;
       scroll-behavior: smooth;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
+      min-height: 100vh;
+      padding: 1rem;
     }
 
     a {
@@ -35,60 +35,10 @@
       transition: color 0.3s ease;
     }
 
-    a:hover {
+    a:hover,
+    a:focus {
       color: #6fb3ff;
-    }
-
-    /* Cabeçalho */
-    header {
-      width: 100%;
-      max-width: 1100px;
-      padding: 4rem 2rem 3rem;
-      text-align: center;
-      background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
-      box-shadow: 0 5px 15px rgba(72, 169, 230, 0.4);
-      border-radius: 12px;
-      margin: 2rem 1rem 3rem;
-      user-select: none;
-      position: relative;
-    }
-
-    header h1 {
-      font-weight: 700;
-      font-size: 2.8rem;
-      color: #48a9e6;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 0 5px #48a9e6aa;
-    }
-
-    header p {
-      font-weight: 400;
-      font-size: 1.25rem;
-      color: #b0b0b0;
-      margin-bottom: 2rem;
-      max-width: 650px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background-color: #48a9e6;
-      color: #fff;
-      padding: 0.85rem 2rem;
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      box-shadow: 0 8px 20px rgba(72, 169, 230, 0.5);
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .cta-button:hover {
-      background-color: #6fb3ff;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(111, 179, 255, 0.7);
+      outline: none;
     }
 
     /* Navegação sticky */
@@ -98,101 +48,154 @@
       background-color: #121212;
       width: 100%;
       max-width: 1100px;
-      margin: 0 auto 3rem;
-      padding: 0.75rem 1rem;
-      border-radius: 12px;
-      box-shadow: 0 3px 15px rgba(72, 169, 230, 0.3);
-      z-index: 1000;
+      margin-bottom: 2rem;
+      padding: 1rem 0;
       display: flex;
       justify-content: center;
       gap: 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 3px 15px rgba(72, 169, 230, 0.4);
       user-select: none;
+      z-index: 999;
     }
 
     nav a {
       font-weight: 600;
-      font-size: 1rem;
-      color: #a0a0a0;
+      font-size: 1.1rem;
       padding-bottom: 4px;
       border-bottom: 2px solid transparent;
-      transition: all 0.3s ease;
+      user-select: none;
     }
 
     nav a:hover,
     nav a:focus {
-      color: #48a9e6;
       border-bottom-color: #48a9e6;
+      color: #48a9e6;
+    }
+
+    /* Container centralizado */
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      background: #171717;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(72, 169, 230, 0.25);
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      user-select: none;
+    }
+
+    /* Cabeçalho */
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #48a9e6;
+      margin-bottom: 0.3rem;
+      text-shadow: 0 0 8px #48a9e6bb;
+      text-align: center;
+    }
+
+    header p {
+      color: #c0c0c0;
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      max-width: 650px;
+      text-align: center;
+      user-select: text;
+    }
+
+    /* Botão CTA */
+    .btn-primary {
+      background-color: #48a9e6;
+      color: #fff;
+      padding: 0.9rem 2.5rem;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 8px 20px rgba(72, 169, 230, 0.5);
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      user-select: none;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: #6fb3ff;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(111, 179, 255, 0.7);
+      outline: none;
     }
 
     /* Seções */
     section {
-      max-width: 1100px;
-      padding: 2rem 1.5rem 4rem;
-      margin: 0 1rem 3rem;
-      background: #171717;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(72, 169, 230, 0.25);
-      user-select: none;
+      width: 100%;
+      margin-top: 3rem;
+      text-align: center;
     }
 
     section h2 {
       font-weight: 700;
       font-size: 2rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.8rem;
       color: #48a9e6;
-      text-align: center;
       text-shadow: 0 0 8px #48a9e6bb;
     }
 
-    /* Listas e parágrafos */
+    section p {
+      max-width: 700px;
+      margin: 0 auto 1.8rem;
+      font-size: 1.1rem;
+      color: #cfcfcf;
+      user-select: text;
+      line-height: 1.5;
+    }
+
+    /* Lista com destaque */
     ul {
+      max-width: 700px;
+      margin: 0 auto;
       list-style: none;
-      margin-top: 1rem;
+      text-align: left;
       padding-left: 0;
     }
 
     ul li {
+      border-left: 4px solid #48a9e6;
+      padding-left: 1rem;
+      margin-bottom: 0.8rem;
       font-weight: 500;
       font-size: 1.1rem;
-      padding: 0.5rem 0;
-      border-left: 3px solid #48a9e6;
-      padding-left: 1rem;
-      margin-bottom: 0.5rem;
       color: #d0d0d0;
       user-select: text;
     }
 
-    p {
-      font-weight: 400;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      margin-bottom: 1.2rem;
-      color: #cfcfcf;
-      user-select: text;
-    }
-
-    /* Serviços com grid */
+    /* Serviços em grid */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
+      margin-top: 2rem;
+      padding: 0 1rem;
     }
 
     .service-card {
-      background-color: #222222;
+      background: #222222;
       border-radius: 12px;
-      padding: 1.75rem 1.5rem;
+      padding: 1.8rem 1.5rem;
       box-shadow: 0 5px 15px rgba(72, 169, 230, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
       align-items: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       user-select: none;
     }
 
     .service-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 10px 30px rgba(72, 169, 230, 0.6);
+      box-shadow: 0 12px 30px rgba(72, 169, 230, 0.6);
     }
 
     .service-icon {
@@ -206,44 +209,82 @@
 
     .service-card h3 {
       font-weight: 700;
-      font-size: 1.4rem;
-      color: #e0e0e0;
+      font-size: 1.3rem;
       margin-bottom: 0.6rem;
+      color: #e0e0e0;
       text-align: center;
       user-select: text;
     }
 
     .service-card p {
-      color: #a8a8a8;
-      text-align: center;
       font-weight: 400;
       font-size: 1rem;
+      color: #a8a8a8;
+      text-align: center;
       user-select: text;
     }
 
-    /* Diferenciais */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 1rem;
+    /* Contato */
+    .contact {
+      margin-top: 3rem;
+      font-size: 1.2rem;
+      text-align: center;
+      color: #cfcfcf;
+      user-select: text;
     }
 
-    .feature-card {
-      background-color: #222222;
-      border-radius: 12px;
-      padding: 1.5rem 1.3rem;
-      box-shadow: 0 5px 15px rgba(72, 169, 230, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .contact a {
+      font-weight: 700;
+      margin: 0 1rem;
       user-select: none;
     }
 
-    .feature-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 30px rgba(72, 169, 230, 0.6);
+    /* Footer simples */
+    footer {
+      margin-top: auto;
+      padding: 1.5rem 1rem;
+      width: 100%;
+      max-width: 1100px;
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+      user-select: none;
     }
 
-    .feature-card h4 {
-      color: #48a9e6;
-      font-weight: 700;
-      margin-bottom: 0.6rem
+    /* Responsividade */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      nav {
+        gap: 1.5rem;
+        padding: 0.75rem 0;
+      }
+
+      .service-card h3 {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="#servicos">Serviços</a>
+    <a href="#diferenciais">Diferenciais</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <div class="container">
+    <header>
+      <h1>AtomTech Soluções Digitais</h1>
+      <p>Sites personalizados, modernos e responsivos para levar sua marca ao próximo nível.</p>
+      <button class="btn-primary" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Solicite seu orçamento</button>
+    </header>
+
+    <section id="servicos">
+      <h2>Nossos Serviços</h2>
+      <div class="services-grid">
+        <article class="service-card" tabindex="0" aria-label="Site Institucional">
+          <svg class="service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden
