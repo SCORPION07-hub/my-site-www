@@ -4,291 +4,246 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AtomTech - Criação de Sites & Automação IA</title>
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    rel="stylesheet"
-  />
+  <title>Criação de Sites Profissionais | AtomTech Soluções Digitais</title>
+  <meta name="description" content="Sites personalizados, responsivos e modernos para valorizar sua marca e aumentar suas vendas. Atendimento via WhatsApp e Instagram." />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/919/919847.png" type="image/png" />
+  <!-- Google Fonts: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     /* Reset básico */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #00ffea;
-      scroll-behavior: smooth;
     }
 
     body {
-      background: #0d0d0d;
-      overflow-x: hidden;
-      display: flex;
-      justify-content: center; /* centraliza horizontal */
-      align-items: flex-start; /* começa do topo verticalmente */
+      background-color: #0d0d0d;
+      color: #e0e0e0;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
       min-height: 100vh;
-      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    main {
-      width: 100%;
-      max-width: 900px; /* limite maximo para ficar centralizado e responsivo */
+    a {
+      color: #48a9e6;
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
 
-    /* Vidro neon container */
-    .glass {
-      background: rgba(0, 255, 234, 0.1);
-      border-radius: 15px;
-      border: 1px solid rgba(0, 255, 234, 0.3);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow:
-        0 0 10px #00ffe7,
-        0 0 20px #00ffe7,
-        0 0 40px #00ffe7;
-      padding: 2.5rem;
-      margin: 2rem auto;
-      transition: transform 0.3s ease;
+    a:hover {
+      color: #6fb3ff;
     }
 
-    .glass:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow:
-        0 0 15px #00ffea,
-        0 0 40px #00ffea,
-        0 0 70px #00ffea,
-        0 0 90px #00ffea;
-    }
-
+    /* Cabeçalho */
     header {
+      width: 100%;
+      max-width: 1100px;
+      padding: 4rem 2rem 3rem;
       text-align: center;
-      padding: 3rem 1rem 2rem;
-      color: #00ffe7;
-      text-shadow:
-        0 0 10px #00ffe7,
-        0 0 20px #00ffe7,
-        0 0 30px #00ffe7;
+      background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+      box-shadow: 0 5px 15px rgba(72, 169, 230, 0.4);
+      border-radius: 12px;
+      margin: 2rem 1rem 3rem;
+      user-select: none;
+      position: relative;
     }
 
     header h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      letter-spacing: 2px;
+      font-weight: 700;
+      font-size: 2.8rem;
+      color: #48a9e6;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 5px #48a9e6aa;
     }
 
     header p {
+      font-weight: 400;
       font-size: 1.25rem;
-      font-weight: 300;
+      color: #b0b0b0;
       margin-bottom: 2rem;
-      color: #a0f9f5;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    /* Botão neon */
-    .btn {
+    .cta-button {
       display: inline-block;
-      padding: 12px 32px;
-      font-size: 1.1rem;
-      color: #00ffea;
-      border: 2px solid #00ffea;
+      background-color: #48a9e6;
+      color: #fff;
+      padding: 0.85rem 2rem;
       border-radius: 30px;
-      background: transparent;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 8px 20px rgba(72, 169, 230, 0.5);
+      transition: background-color 0.3s ease, transform 0.3s ease;
       cursor: pointer;
-      text-decoration: none;
-      box-shadow:
-        0 0 5px #00ffe7,
-        0 0 15px #00ffe7,
-        0 0 20px #00ffe7;
-      transition: all 0.3s ease;
       user-select: none;
     }
 
-    .btn:hover {
-      background: #00ffea;
-      color: #0d0d0d;
-      box-shadow:
-        0 0 20px #00ffea,
-        0 0 40px #00ffea,
-        0 0 60px #00ffea;
-      transform: scale(1.05);
+    .cta-button:hover {
+      background-color: #6fb3ff;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(111, 179, 255, 0.7);
     }
 
-    section {
-      margin-top: 3rem;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 1.5rem;
-      color: #00ffe7;
-      text-shadow:
-        0 0 5px #00ffe7,
-        0 0 10px #00ffe7;
-    }
-
-    .service,
-    .feature,
-    .faq-item {
-      background: rgba(0, 255, 234, 0.05);
+    /* Navegação sticky */
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #121212;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto 3rem;
+      padding: 0.75rem 1rem;
       border-radius: 12px;
-      border: 1px solid rgba(0, 255, 234, 0.3);
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow:
-        0 0 8px rgba(0, 255, 234, 0.15);
-      transition: box-shadow 0.3s ease;
-    }
-
-    .service:hover,
-    .feature:hover,
-    .faq-item:hover {
-      box-shadow:
-        0 0 15px #00ffea,
-        0 0 40px #00ffea;
-      cursor: default;
-    }
-
-    .services-container,
-    .features-container,
-    .faq-container {
+      box-shadow: 0 3px 15px rgba(72, 169, 230, 0.3);
+      z-index: 1000;
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      justify-content: center;
+      gap: 2.5rem;
+      user-select: none;
     }
 
-    /* Lista centralizada */
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #a0a0a0;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: #48a9e6;
+      border-bottom-color: #48a9e6;
+    }
+
+    /* Seções */
+    section {
+      max-width: 1100px;
+      padding: 2rem 1.5rem 4rem;
+      margin: 0 1rem 3rem;
+      background: #171717;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(72, 169, 230, 0.25);
+      user-select: none;
+    }
+
+    section h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #48a9e6;
+      text-align: center;
+      text-shadow: 0 0 8px #48a9e6bb;
+    }
+
+    /* Listas e parágrafos */
     ul {
       list-style: none;
-      color: #00ffea;
+      margin-top: 1rem;
+      padding-left: 0;
+    }
+
+    ul li {
       font-weight: 500;
-      text-align: left;
-      padding-left: 1.25rem;
-    }
-
-    ul li::before {
-      content: "➤ ";
-      color: #00ffea;
-    }
-
-    /* Contato */
-    #contato p,
-    #contato a {
-      text-align: center;
-      display: block;
       font-size: 1.1rem;
-      margin: 0.3rem 0;
-      color: #00ffea;
-      text-decoration: none;
-      text-shadow: 0 0 5px #00ffea;
+      padding: 0.5rem 0;
+      border-left: 3px solid #48a9e6;
+      padding-left: 1rem;
+      margin-bottom: 0.5rem;
+      color: #d0d0d0;
+      user-select: text;
     }
 
-    #contato a:hover {
-      text-decoration: underline;
+    p {
+      font-weight: 400;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
+      color: #cfcfcf;
+      user-select: text;
     }
 
-    footer {
+    /* Serviços com grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background-color: #222222;
+      border-radius: 12px;
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 5px 15px rgba(72, 169, 230, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(72, 169, 230, 0.6);
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+      fill: #48a9e6;
+      filter: drop-shadow(0 0 3px #48a9e6aa);
+      user-select: none;
+    }
+
+    .service-card h3 {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #e0e0e0;
+      margin-bottom: 0.6rem;
       text-align: center;
-      margin-top: 4rem;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #005050;
-      text-shadow:
-        0 0 3px #00ffe7;
+      user-select: text;
     }
 
-    /* Ícones neon */
-    .icon {
-      color: #00ffea;
-      margin-right: 10px;
-      filter: drop-shadow(0 0 4px #00ffea);
+    .service-card p {
+      color: #a8a8a8;
+      text-align: center;
+      font-weight: 400;
+      font-size: 1rem;
+      user-select: text;
     }
 
-    /* Media Queries para responsividade */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-      }
+    /* Diferenciais */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
     }
-  </style>
-</head>
 
-<body>
-  <main>
-    <header>
-      <h1>AtomTech</h1>
-      <p>Criação de Sites & Automação Inteligente para sua Empresa</p>
-      <a href="https://wa.me/5568992493742" class="btn" target="_blank" rel="noopener">Converse pelo WhatsApp</a>
-    </header>
+    .feature-card {
+      background-color: #222222;
+      border-radius: 12px;
+      padding: 1.5rem 1.3rem;
+      box-shadow: 0 5px 15px rgba(72, 169, 230, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
 
-    <section id="servicos">
-      <h2>Nossas Soluções</h2>
-      <div class="services-container">
-        <div class="service">
-          <i class="fa-solid fa-globe icon"></i><strong>Sites Empresariais</strong>
-          <p>Desenvolvemos sites responsivos, modernos e que valorizam sua marca para atrair clientes qualificados.</p>
-        </div>
-        <div class="service">
-          <i class="fa-solid fa-robot icon"></i><strong>Automação com Inteligência Artificial</strong>
-          <p>Chatbots inteligentes que atendem 24h, melhorando vendas e atendimento com experiência humanizada.</p>
-        </div>
-        <div class="service">
-          <i class="fa-solid fa-bullhorn icon"></i><strong>Páginas de Vendas Estratégicas</strong>
-          <p>Páginas otimizadas para conversão, ideais para lançamentos, promoções e campanhas impactantes.</p>
-        </div>
-      </div>
-    </section>
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(72, 169, 230, 0.6);
+    }
 
-    <section id="por-que">
-      <h2>Por que escolher a AtomTech?</h2>
-      <ul>
-        <li>Atendimento humanizado: você nem percebe que está falando com uma IA.</li>
-        <li>Suporte técnico por 30 dias após a entrega.</li>
-        <li>Serviços personalizados: todas as alterações que desejar.</li>
-        <li>Sites que realmente convertem visitantes em clientes.</li>
-      </ul>
-    </section>
-
-    <section id="faq">
-      <h2>Dúvidas Frequentes</h2>
-      <div class="faq-container">
-        <div class="faq-item">
-          <strong>Por que investir em automação para minha empresa?</strong>
-          <p>Automação gera economia de tempo, maior eficiência e permite atendimento 24/7, melhorando a experiência do cliente e aumentando suas vendas.</p>
-        </div>
-        <div class="faq-item">
-          <strong>Como um site pode aumentar minhas vendas?</strong>
-          <p>Um site bem projetado é seu cartão de visita digital, funcionando 24h por dia para atrair, engajar e converter visitantes em clientes reais.</p>
-        </div>
-        <div class="faq-item">
-          <strong>O site será adaptado para celulares?</strong>
-          <p>Sim! Todos os nossos sites são 100% responsivos, garantindo ótima experiência em qualquer dispositivo.</p>
-        </div>
-        <div class="faq-item">
-          <strong>Vocês cuidam da segurança?</strong>
-          <p>Sim! Implementamos protocolos de segurança para proteger seus dados e dos seus clientes.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="features">
-      <h2>Diferenciais AtomTech</h2>
-      <div class="features-container">
-        <div class="feature">
-          <i class="fa-solid fa-palette icon"></i><strong>Design Futurista & Impactante</strong>
-          <p>Layouts únicos com efeitos neon e vidro que destacam sua marca e impressionam visitantes.</p>
-        </div>
-        <div class="feature">
-          <i class="fa-solid fa-mobile-screen icon"></i><strong>Responsividade Completa</strong>
-          <p>Experiência perfeita em smartphones, tablets e desktops.</p>
-        </div>
-        <div class="feature">
-          <i class="fa-solid fa-magnifying-glass-chart icon"></i><strong>SEO Avançado</strong>
-          <p>Seu site otimizado para ranquear melhor nos buscadores e atrair mais tráfego orgânico.</p>
-        </div>
-        <div class="feature">
-          <i class="fa-solid fa-brain icon"></i><strong>IA Integrada</strong>
-          <p>Chatbots inteligentes e automações que aumentam
+    .feature-card h4 {
+      color: #48a9e6;
+      font-weight: 700;
+      margin-bottom: 0.6rem
